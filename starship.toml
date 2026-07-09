@@ -4,11 +4,31 @@
 # Inserts a blank line between shell prompts
 add_newline = true
 
-format = """$all"""
+format = """$username$hostname:$all"""
 
 [username]
-format = "[$user]($style): "
+format = "[$user]($style)"
 show_always = true
+
+[hostname]
+format = "@[$hostname]($style)"
+ssh_symbol = "  "
+
+[shell]
+format = "[$indicator]($style)"
+fish_indicator = ""
+bash_indicator = "bsh "
+zsh_indicator = "zsh "
+powershell_indicator = "psh "
+pwsh_indicator = "psh "
+ion_indicator = "ion "
+elvish_indicator = "esh "
+tcsh_indicator = "tsh "
+xonsh_indicator = "xsh "
+cmd_indicator = "cmd "
+nu_indicator = "nu "
+style = "purple bold"
+disabled = false
 
 [directory]
 truncation_symbol = "…/"
@@ -42,10 +62,6 @@ modified = ""
 staged = ""
 renamed = ""
 deleted = ""
-
-[hostname]
-format = "[$ssh_symbol$hostname]($style): "
-ssh_symbol = " "
 
 [memory_usage]
 symbol = "󰍛 "
